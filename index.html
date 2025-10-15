@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta name="description" content="Sokak Alıştırmaları ile 20 görevde sosyalleşmeyi öğrenin. Özgüven kazanın, ilişkilerinizi geliştirin. Orkun Kumkale'nin kişisel rehberliğiyle.">
+<meta name="keywords" content="sosyalleşme, özgüven, iletişim becerileri, sokak alıştırmaları, orkun kumkale">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sokak Alıştırmaları - 20 Görevle Sosyalleşmeyi Öğren | Orkun Kumkale</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #5458a6 0%, #3d4180 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: moveBackground 20s linear infinite;
+        }
+
+        @keyframes moveBackground {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease 0.2s backwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 18px 45px;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            animation: fadeInUp 1s ease 0.4s backwards;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .price {
+            font-size: 2em;
+            margin-top: 20px;
+            animation: fadeInUp 1s ease 0.6s backwards;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: #667eea;
+        }
+
+        .problem-section {
+            background: #f9f9f9;
+        }
+
+        .problem-text {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.15em;
+            line-height: 1.8;
+        }
+
+        .problem-text p {
+            margin-bottom: 20px;
+        }
+
+        .highlight-box {
+            background: white;
+            padding: 30px;
+            border-left: 5px solid #667eea;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .benefits {
+            background: white;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .benefit-card {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .benefit-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .benefit-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .story-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .story-section .section-title {
+            color: white;
+        }
+
+        .story-text {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.15em;
+            line-height: 1.8;
+        }
+
+        .method-section {
+            background: #f9f9f9;
+        }
+
+        .how-it-works {
+            background: white;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .step {
+            position: relative;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            line-height: 60px;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .step h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .social-proof {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+        }
+
+        .other-services {
+            background: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: #f9f9f9;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            text-align: center;
+            position: relative;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-card.featured {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .service-card.featured h3,
+        .service-card.featured p {
+            color: white;
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: #ffd700;
+            color: #333;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+
+        .service-icon {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .service-card p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .service-bonus {
+            background: rgba(102, 126, 234, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-size: 0.95em;
+        }
+
+        .service-card.featured .service-bonus {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .service-button {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .service-button:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+        }
+
+        .service-card.featured .service-button {
+            background: white;
+            color: #667eea;
+        }
+
+        .service-card.featured .service-button:hover {
+            background: #f0f0f0;
+        }
+
+        .youtube-link {
+            display: inline-block;
+            background: #FF0000;
+            color: white;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 20px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .youtube-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .final-cta {
+            background: #f9f9f9;
+            text-align: center;
+        }
+
+        .guarantee {
+            background: #fff9e6;
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid #ffd700;
+            max-width: 600px;
+            margin: 40px auto;
+        }
+
+        .guarantee h3 {
+            color: #e6a200;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero p {
+                font-size: 1.1em;
+            }
+
+            .section-title {
+                font-size: 2em;
+            }
+        }
+
+.testimonials {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    border-left: 4px solid #667eea;
+}
+
+.testimonial-card h4 {
+    color: #667eea;
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .cta-button, 
+    .service-button {
+        padding: 16px 32px;
+        min-height: 44px; /* Better touch target */
+    }
+    
+    .benefits-grid,
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>İşten Eve, Evden İşe:<br> Bu Döngüyü Kırın</h1>
+            <p>Kalabalık şehirlerde yalnız hisseden profesyoneller için: İş dışında anlamlı ilişkiler kurmak, gerçek bağlantılar yaratmak artık çok daha kolay.</p>
+            <a href="#" class="cta-button">Kursa Hemen Katıl</a>
+           
+        </div>
+    </section>
+
+<div style="text-align: center; background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 20px 0;">
+    <p><strong>Bu Siz Misiniz?</strong><br>
+    ✓ İş hayatında başarılı ama sosyal hayatta kayıp<br>
+    ✓ Hafta sonları evde tek başına geçiyor<br>
+    ✓ Yeni insanlarla tanışmak için "doğru zaman"ı bekliyor<br>
+    ✓ Kaliteli insanlarla nasıl tanışacağını bilmiyor</p>
+</div>
+
+    <section class="problem-section">
+        <div class="container">
+            <h2 class="section-title">Modern Zamanın En Büyük Sorunu</h2>
+            <div class="problem-text">
+                <p>Gerektiği zaman insanlarla konuşamamak, arkadaş bulamamak, karşı cinsten birisiyle ilişki kuramamak... Çocuk yaşlarda edinilen yanlış şartlanmalar neticesinde toplum olarak birbirimizle ilişkilerimiz kısıtlı düzeyde.</p>
+                
+                <p>Ancak durum bu olsa bile içimizdeki sosyalleşme isteği hiç azalmıyor. Aksine yıllar geçtikçe artıyor, yalnızlığımız gibi...</p>
+                
+                <div class="highlight-box">
+                    <strong>Artık eyleme geçme zamanı!</strong>
+                    <p style="margin-top: 10px;">Zamana bırakmak, "bir gün herşey güzel olacak" demek işleri uzatıyor. 35-40 yaşına gelmiş ama bir arkadaşı olmayan, yuva kuramamış çok insan var. Bu işler otomatik olarak HİÇ gerçekleşmiyor.</p>
+                </div>
+
+                <p>Sofranıza yemek koyabilmek için nasıl çalışmayı öğrenmek zorunda iseniz, <strong>sosyalleşmeyi de öğrenmeniz gerek.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">Sokak Alıştırmaları Size Neler Kazandırır?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🗣️</div>
+                    <h3>İstediğiniz Zaman Konuşun</h3>
+                    <p>İstediğiniz zaman, istediğiniz yerde, istediğiniz kişi ile konuşabilmeyi öğrenin.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💝</div>
+                    <h3>Karşı Cinsten Utanmayın</h3>
+                    <p>Beğendiğiniz kişilere rahatlıkla yanaşmayı, reddedilme korkusunu yenmeyi öğrenin.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">👥</div>
+                    <h3>Kendi İlişkinizi Yaratın</h3>
+                    <p>Başkalarından yardım istemeden, toplu ortamlara girebilmeyi, kendi ilişkinizi bulabilmeyi öğrenin.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💪</div>
+                    <h3>Topluluk Önünde Konuşun</h3>
+                    <p>Birden fazla insana karşı, hatta topluluk önünde bile, yüzünüz kızarmadan konuşabilme cesareti kazanın.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="story-section">
+        <div class="container">
+            <h2 class="section-title">Benim Hikayem</h2>
+            <div class="story-text">
+                <p>Hayatımın uzun bir döneminde insanlarla konuşamayan, içe kapanık, sessiz bir hayat süren biriydim. Nasıl kabuktan çıkmayı başararak, karşı cinsle ilişki kurabilmeyi, göz kontağını, hikaye anlatabilmeyi, konuşma sürdürebilmeyi, kendimi ifade edebilmeyi öğrendim?</p>
+                
+                <p><strong>İki yıl boyunca yaptığım alıştırmalarla</strong> gözlemler yaptım ve her insanın kendine has sorunları olduğunu gördüm. Hatta çekindiğim ve korktuğum güzel kadınların bile "insan" olduklarını gördüm.</p>
+
+                <p>Bildiğim herşeyi <strong>"Sokak Alıştırmaları"</strong> metodunda topladım. Bu metot işe yarıyor. Nereden biliyorum? Çünkü daha önce pek çok arkadaşım benden eğitim aldı, hayatlarının değişimine şahit oldum.</p>
+
+                <p style="margin-top: 30px;"><em>"Git Konuş! Ölmezsin" isimli kitabım Türkiye'de yayınlandı. Kitabımda da bu alıştırmaların bir kısmı detaylıca işlenmiştir.</em></p>
+            <center>  <a href=https://www.dr.com.tr/kitap/git-konus-olmezsin/orkun-kumkale/edebiyat/roman/turk-romani/urunno=0002050950001?srsltid=AfmBOorvmuEJVJqgcPdTaH8x81pK-K0H2C8PFmB5e04X43wo9_Tj63kk"><img src="https://raw.githubusercontent.com/orkunkumkale/gitkonus/refs/heads/main/0002050950001-1.jpg" width="200" 
+              height="290"></a></center>
+            </div>
+        </div>
+    </section>
+
+    <section class="method-section">
+        <div class="container">
+            <h2 class="section-title">Metot Nedir?</h2>
+            <div class="problem-text">
+                <p><strong>20 dersten oluşan sosyallik alıştırmalarıdır.</strong> İçine kapanıklığınızı, reddedilme korkunuzu, korkaklığınızı atabilmeniz için kişisel gelişim kitaplarına veya yıllarca bitmeyen beklemeye ihtiyacınız yok.</p>
+                
+                <div class="highlight-box">
+                    <p><strong>Ufak bir efor sarf ederek birkaç ay içinde bu sorunu tamamen gidermek sizin elinizde.</strong></p>
+                </div>
+
+                <p>Size 20 tane birbirinden güzel ve heyecan dolu görev hazırladım. Dersleri izleyecek ve notlar alacaksınız. Tüm görevleri tamamlayınca bana notlarınızı paylaşacaksınız. Böylece (hala eksikleriniz kaldıysa) aldığınız notlar üzerinden size yorum yapacağım.</p>
+
+                <p><strong>Yani size özel bir değerlendirme ve size özel bir tavsiyede bulunacağım.</strong></p>
+            </div>
+        </div>
+    </section>
+ <center>  <a href=https://www.dr.com.tr/kitap/git-konus-olmezsin/orkun-kumkale/edebiyat/roman/turk-romani/urunno=0002050950001?srsltid=AfmBOorvmuEJVJqgcPdTaH8x81pK-K0H2C8PFmB5e04X43wo9_Tj63kk"><img src="https://raw.githubusercontent.com/orkunkumkale/gitkonus/refs/heads/main/0002a.jpg" width="400" 
+              height="301"></a></center>
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">Nasıl Çalışır?</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Kursa Kayıt Olun</h3>
+                    <p>Kaydolun ve videolu derslere anında erişim kazanın.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>20 Görevi İzleyin</h3>
+                    <p>Video derslerini izleyin ve her görev için detaylı notlar alın.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Görevleri Yapın</h3>
+                    <p>Alıştırmaları kendi mahallenizde, işyerinizde, sosyal ortamlarda uygulayın.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Notlarınızı Paylaşın</h3>
+                    <p>Tüm görevleri tamamlayınca notlarınızı benimle paylaşın, size özel değerlendirme ve tavsiye alın.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="social-proof">
+        <div class="container">
+          <center><img src="https://raw.githubusercontent.com/orkunkumkale/gitkonus/refs/heads/main/kucukorkun.png"></center>
+            <h2 class="section-title" style="color: white;">Orkun Kumkale Kimdir?</h2>
+            <p style="font-size: 1.2em; max-width: 800px; margin: 0 auto 20px;">Video içerikleri ile binlerce kişiye ulaşan, sosyalleşme ve kişisel gelişim alanında deneyimli eğitmen. "Git Konuş! Ölmezsin" kitabının yazarı.</p>
+            <a href="https://www.youtube.com/@orkunkumkale" target="_blank" class="youtube-link">YouTube Kanalımı Ziyaret Et</a>
+        </div>
+      <img src="https://raw.githubusercontent.com/orkunkumkale/gitkonus/refs/heads/main/ovgu_(30).jpg"><br><img src="https://raw.githubusercontent.com/orkunkumkale/gitkonus/refs/heads/main/ovgu_(4).jpg"><br><img src="https://raw.githubusercontent.com/orkunkumkale/gitkonus/refs/heads/main/ovgu_(5).jpg"><br><img src="https://raw.githubusercontent.com/orkunkumkale/gitkonus/refs/heads/main/ovgu_(13).jpg"><br><img src="https://raw.githubusercontent.com/orkunkumkale/gitkonus/refs/heads/main/ovgu_(15).jpg"><br><img src="https://raw.githubusercontent.com/orkunkumkale/gitkonus/refs/heads/main/ovgu_(17).jpg"><br><img src="https://raw.githubusercontent.com/orkunkumkale/gitkonus/refs/heads/main/ovgu_(18).jpg"><br><img src="https://raw.githubusercontent.com/orkunkumkale/gitkonus/refs/heads/main/ovgu_(2).jpg"><br><img src="https://raw.githubusercontent.com/orkunkumkale/gitkonus/refs/heads/main/ovgu_(27).jpg"><br><img src="https://raw.githubusercontent.com/orkunkumkale/gitkonus/refs/heads/main/ovgu_(1).jpg"><br><img src="https://raw.githubusercontent.com/orkunkumkale/gitkonus/refs/heads/main/ovgu_(32).jpg"><br><img src="https://raw.githubusercontent.com/orkunkumkale/gitkonus/refs/heads/main/ovgu_(6).jpg"><br>
+      <img src="https://raw.githubusercontent.com/orkunkumkale/gitkonus/refs/heads/main/ovgu_(8).jpg"><br>
+    </section>
+
+<!-- Unique Features -->
+    <section class="benefits" style="background: white;">
+        <div class="container">
+            <h2 class="section-title">Neden Bu Kurs Farklı?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>📝 Kişisel Not Değerlendirme</h3>
+                    <p>Görev notlarını bana gönder, sana özel geri bildirim ve rehberlik al</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>🎥 Pratik Video Dersler</h3>
+                    <p>Teoriye boğulmadan, hemen uygulayabileceğin pratik teknikler</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>⚡ Günlük Görev Sistemi</h3>
+                    <p>Küçük adımlarla ilerleyen, kalıcı değişim sağlayan günlük misyonlar</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>📊 Gelişim Takip Sistemi</h3>
+                    <p>Her görev sonunda ilerlemeni ölç ve motivasyonunu koru</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Öğrenciler Ne Diyor?</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p>"20. görevi tamamladığımda, sosyal ortamlarda nasıl bu kadar rahat olabildiğime kendim bile inanamadım. Orkun'un kişisel feedback'leri inanılmaz değerli!"</p>
+                    <h4>- Mehmet K.</h4>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Her görev hayatıma yeni bir beceri kattı. Özgüvenim yerine geldi, artık topluluk önünde konuşmaktan korkmuyorum. Hayatımın en iyi yatırımı!"</p>
+                    <h4>- Ayşe T.</h4>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Minnettarlık görevleri hayata bakış açımı değiştirdi. Daha pozitif, daha sosyal ve kendinden emin bir insana dönüştüm. Teşekkürler!"</p>
+                    <h4>- Can D.</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="other-services">
+        <div class="container">
+            <h2 class="section-title">Diğer Hizmetlerim</h2>
+            <p style="text-align: center; font-size: 1.1em; margin-bottom: 50px; max-width: 700px; margin-left: auto; margin-right: auto;">Sizin için hazırladığım diğer hizmetlere göz atın. İhtiyacınıza göre en uygun seçeneği bulabilirsiniz.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🎯</div>
+                    <h3>Genç Kariyer Danışmanlığı</h3>
+                    <p>18-22 yaş arası gençler için hayat yolu ve kariyer seçimi konusunda birebir danışmanlık. Zoom veya WhatsApp üzerinden görüşme.</p>
+                    <div class="service-bonus">
+                        <strong>🎁 Bonus:</strong> Ücretsiz rehber PDF hediye!
+                    </div>
+                    <a href="#" class="service-button">Detaylı Bilgi Al</a>
+                </div>
+
+                <div class="service-card featured">
+                    <div class="featured-badge">En Popüler</div>
+                    <div class="service-icon">💬</div>
+                    <h3>Birebir Danışmanlık</h3>
+                    <p>20 ders kursu atlamak ve doğrudan danışmanlık almak mı istiyorsunuz? Size özel çözümler üretelim.</p>
+                    <a href="#" class="service-button">Hemen Başvur</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🎥</div>
+                    <h3>YouTube Stüdyo Kurulumu</h3>
+                    <p>Kendi YouTube kanalınızı başlatmak mı istiyorsunuz? Stüdyo kurulumu ve içerik üretimi konusunda danışmanlık.</p>
+                    <a href="#" class="service-button">Bilgi Al</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <div class="container">
+            <h2 class="section-title">Hayatınızı Değiştirmeye Hazır Mısınız?</h2>
+            <p style="font-size: 1.2em; margin-bottom: 30px; max-width: 800px; margin-left: auto; margin-right: auto;">Yıllarca süren yalnızlığa ve içe kapanıklığa son verme zamanı. 20 görevlik bu yolculukta size rehberlik edeceğim.</p>
+            
+            <div class="guarantee">
+                <h3>✨ Size Özel Geri Bildirim</h3>
+                <p>Kurs sonunda notlarınızı benimle paylaşın. Size özel değerlendirme yapacağım ve size özel tavsiyelerde bulunacağım. Bu videolar sadece kursa özeldir.</p>
+            </div>
+
+            <a href="https://shopier.com/orkunkumkale" class="cta-button">Şimdi Başla - 2.499 TL</a>
+            
+            <p style="margin-top: 30px; color: #666;">
+                <small>Ödeme sonrası kurs erişim bilgileriniz e-posta ile gönderilecektir.</small>
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Orkun Kumkale. Tüm hakları saklıdır.</p>
+            <p style="margin-top: 10px;">
+                <a href="https://www.youtube.com/@orkunkumkale" target="_blank">YouTube</a> | 
+                <a href="https://linktr.ee/orkunkumkale" target="_blank">Linktree</a> | 
+                <a href="https://orkunkumkale.com.tr" target="_blank">Web Sitesi</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add intersection observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.benefit-card, .step').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
